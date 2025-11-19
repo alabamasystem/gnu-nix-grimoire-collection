@@ -10,6 +10,7 @@ networking.networkmanager.enable = true;
 networking.useNetworkd = true;
 ```
 
+Declare a new kernel virtual network bridge device. In practical terms, this is a new virtual network card.
 ```nix
 # Lemu-Link: Kernel virtual bridge network device
 systemd.network.netdevs = {
@@ -17,6 +18,7 @@ systemd.network.netdevs = {
     netdevConfig = {
       Kind = "bridge";
       Name = "lorienlink-0";
+      MACAddress = "E8:B4:70:C0:00:01";
     };
   }; 
 };
